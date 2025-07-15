@@ -129,7 +129,7 @@
 
 @layer components {
   .luxury-button {
-    @apply bg-gradient-luxury text-primary-foreground font-semibold py-3 px-8 rounded-lg shadow-luxury transition-luxury hover:shadow-hero hover:scale-105;
+    @apply bg-gradient-luxury text-primary-foreground font-semibold py-3 px-8 rounded-lg shadow-luxury transition-all duration-300 ease-luxury hover:shadow-hero hover:scale-105;
   }
 
   .luxury-card {
