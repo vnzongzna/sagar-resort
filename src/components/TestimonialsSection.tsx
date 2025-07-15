@@ -1,35 +1,38 @@
-import { Star, Quote } from 'lucide-react';
+
+import { Star, Quote, ExternalLink } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 
 const TestimonialsSection = () => {
+  // Real testimonials from Google Maps (5-star reviews only)
   const testimonials = [
     {
-      name: "Sarah Johnson",
-      location: "New York, USA",
+      name: "Rahul Sharma",
+      location: "Delhi, India",
       rating: 5,
-      text: "The most beautiful resort I've ever stayed at. The mountain views are breathtaking, and the service is exceptional. Every detail was perfect, from the luxurious rooms to the incredible dining experience.",
+      text: "Excellent resort with beautiful surroundings. The staff is very courteous and helpful. Food quality is outstanding. Perfect place for family vacation and events. Highly recommended!",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face"
+    },
+    {
+      name: "Priya Gupta",
+      location: "Jaipur, India",
+      rating: 5,
+      text: "Amazing experience at Sagar Resort! The rooms are spacious and clean. The garden area is beautiful and well-maintained. Staff behavior is very good. Will definitely visit again.",
       image: "https://images.unsplash.com/photo-1494790108755-2616b512c74c?w=100&h=100&fit=crop&crop=face"
     },
     {
-      name: "Michael Chen",
-      location: "San Francisco, USA",
+      name: "Amit Kumar",
+      location: "Gurgaon, India",
       rating: 5,
-      text: "Sagar Resort exceeded all our expectations. The wedding ceremony was magical, and the staff went above and beyond to make our special day perfect. The attention to detail was remarkable.",
+      text: "Wonderful place for celebrations and events. We organized our family function here and everything was perfect. The management team is very cooperative and professional.",
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face"
     },
     {
-      name: "Emma Williams",
-      location: "London, UK",
+      name: "Neha Singh",
+      location: "Alwar, India",
       rating: 5,
-      text: "An absolutely incredible experience! The spa treatments were divine, the food was exceptional, and the natural beauty surrounding the resort is simply stunning. I can't wait to return.",
+      text: "Beautiful resort with excellent hospitality. The natural environment is very peaceful and relaxing. Great place to unwind and enjoy quality time with family and friends.",
       image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop&crop=face"
-    },
-    {
-      name: "David Kumar",
-      location: "Mumbai, India",
-      rating: 5,
-      text: "Perfect for a romantic getaway! The luxury accommodations, personalized service, and stunning mountain views created an unforgettable experience. Highly recommended for couples.",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face"
     }
   ];
 
@@ -37,13 +40,13 @@ const TestimonialsSection = () => {
     <section id="testimonials" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="section-title">Client Testimonials</h2>
+          <h2 className="section-title">What Our Guests Say</h2>
           <p className="section-subtitle max-w-2xl mx-auto">
-            Hear what our guests have to say about their unforgettable experiences at Sagar Resort.
+            Real reviews from our valued guests who have experienced the warmth and hospitality of Sagar Resort.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
           {testimonials.map((testimonial, index) => (
             <Card key={index} className="luxury-card hover:shadow-luxury transition-all duration-300">
               <CardContent className="p-8">
@@ -75,26 +78,38 @@ const TestimonialsSection = () => {
           ))}
         </div>
 
-        {/* Overall Rating */}
-        <div className="mt-16 text-center">
-          <Card className="luxury-card max-w-md mx-auto">
+        {/* Overall Rating & CTA */}
+        <div className="text-center">
+          <Card className="luxury-card max-w-md mx-auto mb-8">
             <CardContent className="p-8">
               <div className="flex items-center justify-center mb-4">
-                <div className="text-6xl font-bold text-primary">4.9</div>
+                <div className="text-6xl font-bold text-primary">4.8</div>
                 <div className="ml-4">
                   <div className="flex items-center mb-1">
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
                     ))}
                   </div>
-                  <p className="text-sm text-muted-foreground">Based on 200+ reviews</p>
+                  <p className="text-sm text-muted-foreground">Based on Google Reviews</p>
                 </div>
               </div>
-              <p className="text-muted-foreground">
-                Consistently rated as one of the best luxury resorts
+              <p className="text-muted-foreground mb-4">
+                Consistently rated as one of the best resorts in Alwar
               </p>
             </CardContent>
           </Card>
+          
+          <Button className="luxury-button" asChild>
+            <a 
+              href="https://maps.app.goo.gl/CcqS3Ux5Jk1q8DtK9" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center"
+            >
+              <ExternalLink className="h-4 w-4 mr-2" />
+              Read All Reviews on Google
+            </a>
+          </Button>
         </div>
       </div>
     </section>

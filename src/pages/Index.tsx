@@ -1,3 +1,4 @@
+
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import AboutSection from '@/components/AboutSection';
@@ -6,6 +7,7 @@ import WeddingSection from '@/components/WeddingSection';
 import ServicesSection from '@/components/ServicesSection';
 import GallerySection from '@/components/GallerySection';
 import TestimonialsSection from '@/components/TestimonialsSection';
+import MapSection from '@/components/MapSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 
@@ -20,6 +22,7 @@ const Index = () => {
       <ServicesSection />
       <GallerySection />
       <TestimonialsSection />
+      <MapSection />
       <ContactSection />
       <Footer />
     </div>
