@@ -62,7 +62,7 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Luxury resort colors
+				// Dark green luxury colors
 				luxury: {
 					gold: 'hsl(var(--luxury-gold))',
 					bronze: 'hsl(var(--luxury-bronze))',
