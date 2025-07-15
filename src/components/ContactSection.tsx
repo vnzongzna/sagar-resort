@@ -9,17 +9,17 @@ const ContactSection = () => {
     {
       icon: <MapPin className="h-6 w-6 text-primary" />,
       title: "Our Location",
-      details: ["Sagar Resort, Mountain Valley", "Himachal Pradesh, India - 175001"]
+      details: ["Dhai Pedi, Ahinsa Circle, Old Jaipur Road", "Alwar, Rajasthan (India) Pin - 301001"]
     },
     {
       icon: <Phone className="h-6 w-6 text-primary" />,
       title: "Phone Numbers",
-      details: ["+91 123 456 7890", "+91 123 456 7891"]
+      details: ["+91 9119115185", "+91 9119115186"]
     },
     {
       icon: <Mail className="h-6 w-6 text-primary" />,
       title: "Email Addresses",
-      details: ["info@sagarresort.com", "reservations@sagarresort.com"]
+      details: ["thesagarresort@gmail.com", "reservations@sagarresort.com"]
     },
     {
       icon: <Clock className="h-6 w-6 text-primary" />,

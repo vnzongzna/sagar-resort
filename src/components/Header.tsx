@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Menu, X, MapPin, Phone, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import sagarLogo from '@/assets/sagar-logo.png';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,16 +24,16 @@ const Header = () => {
             <div className="flex items-center space-x-6">
               <div className="flex items-center space-x-2">
                 <MapPin className="h-4 w-4" />
-                <span>Sagar Resort, Mountain Valley</span>
+                <span>Dhai Pedi, Ahinsa Circle, Old Jaipur Road, Alwar, Rajasthan</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Phone className="h-4 w-4" />
-                <span>+1 234 567 8900</span>
+                <span>+91 9119115185</span>
               </div>
             </div>
             <div className="flex items-center space-x-2">
               <Mail className="h-4 w-4" />
-              <span>info@sagarresort.com</span>
+              <span>thesagarresort@gmail.com</span>
             </div>
           </div>
         </div>
@@ -43,12 +44,12 @@ const Header = () => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="h-10 w-10 bg-gradient-luxury rounded-full flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-xl">S</span>
+            <div className="h-10 w-10 rounded-full overflow-hidden">
+              <img src={sagarLogo} alt="Sagar Resort Logo" className="w-full h-full object-contain" />
             </div>
             <div>
               <h1 className="text-2xl font-bold text-foreground">Sagar Resort</h1>
-              <p className="text-xs text-muted-foreground">Luxury Mountain Experience</p>
+              <p className="text-xs text-muted-foreground">A Luxury Hotel In The Heart of Alwar</p>
             </div>
           </div>
 

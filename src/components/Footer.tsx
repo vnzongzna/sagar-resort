@@ -1,4 +1,5 @@
 import { MapPin, Phone, Mail, Facebook, Twitter, Instagram, Youtube } from 'lucide-react';
+import sagarLogo from '@/assets/sagar-logo.png';
 
 const Footer = () => {
   const footerLinks = {
@@ -23,9 +24,9 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { icon: <Facebook className="h-5 w-5" />, href: "#", name: "Facebook" },
+    { icon: <Facebook className="h-5 w-5" />, href: "https://www.facebook.com/thesagarresort", name: "Facebook" },
+    { icon: <Instagram className="h-5 w-5" />, href: "https://www.instagram.com/thesagarresort/", name: "Instagram" },
     { icon: <Twitter className="h-5 w-5" />, href: "#", name: "Twitter" },
-    { icon: <Instagram className="h-5 w-5" />, href: "#", name: "Instagram" },
     { icon: <Youtube className="h-5 w-5" />, href: "#", name: "YouTube" }
   ];
 
@@ -37,34 +38,34 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="space-y-6">
             <div className="flex items-center space-x-2">
-              <div className="h-10 w-10 bg-gradient-luxury rounded-full flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-xl">S</span>
+              <div className="h-10 w-10 rounded-full overflow-hidden">
+                <img src={sagarLogo} alt="Sagar Resort Logo" className="w-full h-full object-contain" />
               </div>
               <div>
                 <h3 className="text-2xl font-bold">Sagar Resort</h3>
-                <p className="text-xs text-luxury-cream/70">Luxury Mountain Experience</p>
+                <p className="text-xs text-luxury-cream/70">A Luxury Hotel In The Heart of Alwar</p>
               </div>
             </div>
             
             <p className="text-luxury-cream/80 leading-relaxed">
-              Experience unparalleled luxury in the heart of the mountains. Where every moment 
-              becomes a cherished memory.
+              "SAGAR RESORT" located in the foot hills of "ARAVALI" at Alwar, Rajasthan. 
+              A true reflection of modern influences and contemporary hospitality.
             </p>
 
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <MapPin className="h-4 w-4 text-primary flex-shrink-0" />
                 <span className="text-sm text-luxury-cream/80">
-                  Sagar Resort, Mountain Valley, Himachal Pradesh - 175001
+                  Dhai Pedi, Ahinsa Circle, Old Jaipur Road, Alwar, Rajasthan (India) Pin - 301001
                 </span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-4 w-4 text-primary flex-shrink-0" />
-                <span className="text-sm text-luxury-cream/80">+91 123 456 7890</span>
+                <span className="text-sm text-luxury-cream/80">+91 9119115185</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-primary flex-shrink-0" />
-                <span className="text-sm text-luxury-cream/80">info@sagarresort.com</span>
+                <span className="text-sm text-luxury-cream/80">thesagarresort@gmail.com</span>
               </div>
             </div>
           </div>
