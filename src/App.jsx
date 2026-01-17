@@ -218,6 +218,18 @@ export default function App() {
   });
   const [bookingStatus, setBookingStatus] = useState("idle");
 
+  useEffect(() => {
+    const signInAnonymously = async () => {
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
+      if (!user) {
+        await supabase.auth.signInAnonymously();
+      }
+    };
+    signInAnonymously();
+  }, []);
+
   // --- Handlers ---
   const handleBookingSubmit = async (e) => {
     e.preventDefault();
@@ -227,7 +239,8 @@ export default function App() {
       const sanitizedNotes = DOMPurify.sanitize(bookingData.notes);
       const { data, error } = await supabase
         .from("bookings")
-        .insert([{ ...bookingData, notes: sanitizedNotes }]);
+        .insert([{ ...bookingData, notes: sanitizedNotes }])
+        .select();
 
       if (error) {
         throw error;
@@ -235,7 +248,7 @@ export default function App() {
 
       const { data: emailData, error: emailError } =
         await supabase.functions.invoke("send-booking-email", {
-          body: { booking: bookingData },
+          body: { booking: data[0] },
         });
 
       if (emailError) {
@@ -247,6 +260,10 @@ export default function App() {
         setBookingStatus("idle");
         setBookingData((prev) => ({
           ...prev,
+          check_in: "",
+          check_out: "",
+          number_of_rooms: "1",
+          room_type: "deluxe",
           name: "",
           email: "",
           phone: "",
@@ -896,13 +913,13 @@ export default function App() {
                   <h4 className="text-lg font-semibold text-stone-900">
                     Address
                   </h4>
-                  <p className="text-stone-600 mt-1">
-                    Dhai Pedi, Ahinsa Circle,
-                    <br />
-                    Jaipur Road, Alwar,
-                    <br />
-                    Rajasthan 301001
-                  </p>
+                  <a
+                    href="https://maps.app.goo.gl/sYPwhTLPRKh8D7Zb8"
+                    className="text-stone-600 mt-1"
+                  >
+                    Dhai Pedi, Ahinsa Circle Old Jaipur Road, Alwar Rajasthan
+                    (India)
+                  </a>
                 </div>
               </div>
               <div className="flex items-start">
@@ -913,8 +930,9 @@ export default function App() {
                   <h4 className="text-lg font-semibold text-stone-900">
                     Phone
                   </h4>
-                  <p className="text-stone-600 mt-1">+91 144 233 4455</p>
-                  <p className="text-stone-600">+91 982 900 1234</p>
+                  <a href="tel:+919119115185" className="text-stone-600 mt-1">
+                    +91 9119115185
+                  </a>
                 </div>
               </div>
               <div className="flex items-start">
@@ -925,8 +943,12 @@ export default function App() {
                   <h4 className="text-lg font-semibold text-stone-900">
                     Email
                   </h4>
-                  <p className="text-stone-600 mt-1">info@thesagarresort.com</p>
-                  <p className="text-stone-600">bookings@thesagarresort.com</p>
+                  <a
+                    href="mailto:thesagarresort@gmail.com"
+                    className="text-stone-600 mt-1"
+                  >
+                    thesagarresort@gmail.com
+                  </a>
                 </div>
               </div>
             </div>
@@ -935,21 +957,28 @@ export default function App() {
                 Follow Us
               </h4>
               <div className="flex space-x-4">
-                <button className="w-10 h-10 bg-stone-100 rounded-full flex items-center justify-center text-stone-600 hover:bg-amber-600 hover:text-white transition-colors">
+                <a
+                  href="https://www.instagram.com/sagarresortalwar/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-stone-100 rounded-full flex items-center justify-center text-stone-600 hover:bg-amber-600 hover:text-white transition-colors"
+                >
                   <Instagram size={20} />
-                </button>
-                <button className="w-10 h-10 bg-stone-100 rounded-full flex items-center justify-center text-stone-600 hover:bg-amber-600 hover:text-white transition-colors">
+                </a>
+                <a
+                  href="https://www.facebook.com/people/Sagar-Resort-Alwar/100079692443377/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-stone-100 rounded-full flex items-center justify-center text-stone-600 hover:bg-amber-600 hover:text-white transition-colors"
+                >
                   <Facebook size={20} />
-                </button>
-                <button className="w-10 h-10 bg-stone-100 rounded-full flex items-center justify-center text-stone-600 hover:bg-amber-600 hover:text-white transition-colors">
-                  <Twitter size={20} />
-                </button>
+                </a>
               </div>
             </div>
           </div>
           <div className="bg-stone-200 rounded-xl overflow-hidden shadow-lg h-[500px] relative group">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3531.309383455885!2d76.60733891506255!3d27.55169538278207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39729973aaaaaaab%3A0x8b5716275240217!2sSagar%20Resort!5e0!3m2!1sen!2sin!4v1678886400000!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3538.533856501332!2d76.58159617518793!3d27.514868933955103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39729baf8d82fa2b%3A0x5b123418a4d64a70!2sSagar%20Resorts!5e0!3m2!1sen!2sin!4v1723109867713!5m2!1sen!2sin"
               width="100%"
               height="100%"
               style={{ border: 0 }}
