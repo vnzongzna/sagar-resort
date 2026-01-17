@@ -218,18 +218,6 @@ export default function App() {
   });
   const [bookingStatus, setBookingStatus] = useState("idle");
 
-  useEffect(() => {
-    const signInAnonymously = async () => {
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
-      if (!user) {
-        await supabase.auth.signInAnonymously();
-      }
-    };
-    signInAnonymously();
-  }, []);
-
   // --- Handlers ---
   const handleBookingSubmit = async (e) => {
     e.preventDefault();
