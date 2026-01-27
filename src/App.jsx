@@ -23,6 +23,7 @@ import {
   ChevronLeft,
   Eye,
   Maximize2,
+  MessageCircle,
 } from "lucide-react";
 import DOMPurify from "dompurify";
 
@@ -217,7 +218,7 @@ const RoomModal = ({ room, onClose, onBook }) => {
                 <span className="text-stone-500 ml-1 text-sm">+ taxes</span>
               </div>
             </div>
-            <Button onClick={() => onBook(room.id)}>Book This Room</Button>
+            {/* <Button onClick={() => onBook(room.id)}>Book This Room</Button> */}
           </div>
         </div>
       </div>
@@ -294,8 +295,7 @@ export default function App() {
     { id: "wedding", label: "Weddings" },
     { id: "gallery", label: "Gallery" },
     { id: "alwar", label: "Explore Alwar" },
-    { id: "contact", label: "Contact" },
-    { id: "book", label: "Book Now", isCta: true },
+    { id: "contact", label: "Contact", isCta: true },
   ];
 
   const renderHeader = () => (
@@ -402,13 +402,13 @@ export default function App() {
             blend of Rajasthani heritage and modern luxury.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
+            {/* <Button
               onClick={() => setActiveTab("book")}
               variant="primary"
               className="text-lg px-8"
             >
               Book Your Stay
-            </Button>
+            </Button> */}
             <Button
               onClick={() => setActiveTab("rooms")}
               variant="secondary"
@@ -597,16 +597,12 @@ export default function App() {
                   </div>
                   <Button
                     onClick={() => {
-                      setBookingData((prev) => ({
-                        ...prev,
-                        room_type: room.id,
-                      }));
-                      setActiveTab("book");
+                      setActiveTab("contact");
                       window.scrollTo(0, 0);
                     }}
                     className="text-sm px-4 py-2"
                   >
-                    Book Now
+                    Contact Us
                   </Button>
                 </div>
               </div>
@@ -934,6 +930,25 @@ export default function App() {
                 </div>
               </div>
               <div className="flex items-start">
+                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center shrink-0">
+                  <MessageCircle className="w-6 h-6 text-green-600" />
+                </div>
+                <div className="ml-6">
+                  <h4 className="text-lg font-semibold text-stone-900">
+                    WhatsApp
+                  </h4>
+                  <a
+                    href="https://wa.me/919119115185"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-stone-600 mt-1 inline-flex items-center hover:text-green-600 transition-colors"
+                  >
+                    +91 9119115185
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-start">
                 <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center shrink-0">
                   <Phone className="w-6 h-6 text-amber-700" />
                 </div>
@@ -1017,7 +1032,7 @@ export default function App() {
           <AlwarExplorePage setActiveTab={setActiveTab} />
         )}
         {activeTab === "contact" && renderContact()}
-        {activeTab === "book" && renderBooking()}
+        {/* {activeTab === "book" && renderBooking()} */}
       </main>
       <footer className="bg-stone-900 text-stone-400 py-12 mt-auto">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-4 gap-8">
