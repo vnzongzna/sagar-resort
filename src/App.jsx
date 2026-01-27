@@ -87,6 +87,8 @@ const Button = ({
 };
 
 const RoomModal = ({ room, onClose, onBook }) => {
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+
   if (!room) return null;
 
   return (
@@ -107,13 +109,29 @@ const RoomModal = ({ room, onClose, onBook }) => {
         <div className="w-full md:w-1/2 bg-stone-100 flex flex-col h-[40vh] md:h-auto">
           <div className="flex-1 overflow-hidden relative group">
             <ImageWithFallback
-              src={room.gallery[0]}
+              src={room.gallery[selectedImageIndex]}
               className="w-full h-full object-cover"
               alt={room.name}
             />
             <div className="absolute bottom-4 right-4 bg-black/60 text-white text-xs px-3 py-1 rounded-full backdrop-blur-md">
-              + {room.gallery.length - 1} more photos
+              {selectedImageIndex + 1} / {room.gallery.length}
             </div>
+            {selectedImageIndex > 0 && (
+              <button
+                onClick={() => setSelectedImageIndex(selectedImageIndex - 1)}
+                className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all"
+              >
+                <ChevronLeft size={24} />
+              </button>
+            )}
+            {selectedImageIndex < room.gallery.length - 1 && (
+              <button
+                onClick={() => setSelectedImageIndex(selectedImageIndex + 1)}
+                className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all"
+              >
+                <ChevronRight size={24} />
+              </button>
+            )}
           </div>
 
           <div className="h-24 bg-stone-900 p-2 flex space-x-2 overflow-x-auto scrollbar-hide">
@@ -121,7 +139,12 @@ const RoomModal = ({ room, onClose, onBook }) => {
               <img
                 key={i}
                 src={img}
-                className="h-full w-32 object-cover rounded-md cursor-pointer opacity-70 hover:opacity-100 transition-opacity border border-stone-700"
+                onClick={() => setSelectedImageIndex(i)}
+                className={`h-full w-32 object-cover rounded-md cursor-pointer transition-all border-2 ${
+                  selectedImageIndex === i
+                    ? 'opacity-100 border-amber-500'
+                    : 'opacity-70 hover:opacity-100 border-stone-700'
+                }`}
                 alt={`${room.name} view ${i + 1}`}
               />
             ))}
@@ -283,11 +306,11 @@ export default function App() {
             className="flex items-center cursor-pointer space-x-2"
             onClick={() => setActiveTab("home")}
           >
-            <div className="w-10 h-10 bg-amber-600 rounded-sm flex items-center justify-center">
-              <span className="text-2xl font-serif font-bold text-white">
-                S
-              </span>
-            </div>
+            <img
+              src="/logo/sagar.png"
+              alt="Sagar Resort Logo"
+              className="h-16 w-auto object-contain"
+            />
             <div>
               <h1 className="text-xl font-serif tracking-widest uppercase">
                 Sagar Resort

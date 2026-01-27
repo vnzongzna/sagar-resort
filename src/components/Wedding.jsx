@@ -26,12 +26,22 @@ const Button = ({ children, onClick, variant = "primary", className = "" }) => {
 const WeddingPage = ({ setActiveTab }) => {
   return (
     <div className="min-h-screen animate-in fade-in duration-500">
-      <div className="relative h-[70vh]">
-        <ImageWithFallback
-          src={IMAGES.wedding_hero}
+      <div className="relative h-[70vh] overflow-hidden">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
           className="w-full h-full object-cover"
-          alt="Beautiful Wedding Setup"
-        />
+        >
+          <source src="/videos/Trimmed Banner.mp4" type="video/mp4" />
+          {/* Fallback image if video fails to load */}
+          <img
+            src={IMAGES.wedding_hero}
+            className="w-full h-full object-cover"
+            alt="Beautiful Wedding Setup"
+          />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-12 text-white text-center">
           <Heart className="w-16 h-16 text-rose-300 mx-auto mb-4" />
