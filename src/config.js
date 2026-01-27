@@ -41,18 +41,18 @@ export const IMAGES = {
   wedding_hero:
     "https://zlrqwqei9vlejcwl.public.blob.vercel-storage.com/WhatsApp%20Image%202024-08-30%20at%2012.22.41_0ddabada.jpg",
   wedding_venue:
-    "https://zlrqwqei9vlejcwl.public.blob.vercel-storage.com/WhatsApp%20Image%202024-08-30%20at%2012.22.41_0ddabada.jpg",
+    "https://zlrqwqei9vlejcwl.public.blob.vercel-storage.com/WhatsApp%20Image%202024-08-30%20at%2012.22.57_b86271a7.jpg",
   wedding_decor:
     "https://zlrqwqei9vlejcwl.public.blob.vercel-storage.com/WhatsApp%20Image%202024-11-25%20at%2019.15.34_ac25a5ed.jpg",
   wedding_couple:
-    "https://zlrqwqei9vlejcwl.public.blob.vercel-storage.com/WhatsApp%20Image%202024-08-30%20at%2012.22.41_0ddabada.jpg",
+    "https://zlrqwqei9vlejcwl.public.blob.vercel-storage.com/WhatsApp%20Image%202024-08-19%20at%2014.03.47_757bbee4.jpg",
 };
 
 export const ROOMS = [
   {
     id: "deluxe",
     name: "Deluxe Room",
-    price: 4500,
+    price: 3499,
     size: "250 sq.ft",
     capacity: "2 Adults + 1 Child",
     image: IMAGES.deluxe_main,
@@ -75,7 +75,7 @@ export const ROOMS = [
   {
     id: "executive",
     name: "Executive Room",
-    price: 5800,
+    price: 4499,
     size: "378 sq.ft",
     capacity: "2 Adults + 1 Child",
     image: IMAGES.executive_main,
@@ -102,7 +102,7 @@ export const ROOMS = [
   {
     id: "junior-suite",
     name: "Junior Suite",
-    price: 6500,
+    price: 5499,
     size: "450 sq.ft",
     capacity: "2 Adults + 1 Child",
     image: IMAGES.suite_main,
@@ -129,7 +129,7 @@ export const ROOMS = [
   {
     id: "junior-twin",
     name: "Junior Twin Bed",
-    price: 6500,
+    price: 5499,
     size: "450 sq.ft",
     capacity: "2 Adults + 1 Child",
     image: IMAGES.twin_main,
@@ -154,7 +154,7 @@ export const ROOMS = [
   {
     id: "royal-suite",
     name: "Royal Suite",
-    price: 8500,
+    price: 6499,
     size: "550 sq.ft",
     capacity: "2 Adults + 1 Child",
     image: "https://zlrqwqei9vlejcwl.public.blob.vercel-storage.com/DSC09875.JPG",
@@ -181,7 +181,7 @@ export const ROOMS = [
   {
     id: "family-suite",
     name: "Family Suite",
-    price: 10500,
+    price: 7499,
     size: "700 sq.ft",
     capacity: "4 Adults + 2 Children",
     image: IMAGES.family_main,
@@ -205,65 +205,164 @@ export const ROOMS = [
 ];
 
 export const GALLERY_IMAGES = [
+  // Resort Exterior
   {
     id: "resort",
-    src: "https://7b2h66h2k89z24v9.public.blob.vercel-storage.com/gallery_resort-C1B1A1z1X1y1C1B1A.jpg",
+    src: "https://zlrqwqei9vlejcwl.public.blob.vercel-storage.com/WhatsApp%20Image%202024-09-19%20at%2016.34.21_fc35a717.jpg",
     title: "Resort Exterior",
   },
   {
-    id: "pool",
-    src: "https://7b2h66h2k89z24v9.public.blob.vercel-storage.com/gallery_pool-B1A1z1X1y1C1B1A1.jpg",
-    title: "Poolside View",
-  },
-  {
-    id: "dining",
-    src: "https://7b2h66h2k89z24v9.public.blob.vercel-storage.com/gallery_dining-A1z1X1y1C1B1A1z.jpg",
-    title: "The Clove Restaurant",
-  },
-  {
-    id: "wedding",
-    src: "https://7b2h66h2k89z24v9.public.blob.vercel-storage.com/gallery_wedding-z1X1y1C1B1A1z1.jpg",
-    title: "Wedding Setup",
-  },
-  {
-    id: "room_deluxe",
-    src: "https://7b2h66h2k89z24v9.public.blob.vercel-storage.com/gallery_deluxe-X1y1C1B1A1z1X.jpg",
-    title: "Deluxe Room",
-  },
-  {
-    id: "room_suite",
-    src: "https://7b2h66h2k89z24v9.public.blob.vercel-storage.com/gallery_suite-y1C1B1A1z1X1y.jpg",
-    title: "Junior Suite",
-  },
-  {
-    id: "event",
-    src: "https://7b2h66h2k89z24v9.public.blob.vercel-storage.com/gallery_event-C1B1A1z1X1y1C.jpg",
-    title: "Banquet Hall",
+    id: "resort_entrance",
+    src: "https://zlrqwqei9vlejcwl.public.blob.vercel-storage.com/WhatsApp%20Image%202024-08-18%20at%2013.35.12_82143fb9.jpg",
+    title: "Main Entrance",
   },
   {
     id: "exterior_night",
-    src: "https://7b2h66h2k89z24v9.public.blob.vercel-storage.com/gallery_exterior_night-B1A1z1X1y1C1B1A.jpg",
+    src: "https://zlrqwqei9vlejcwl.public.blob.vercel-storage.com/IMG20241011190807.jpg",
     title: "Resort at Night",
   },
+
+  // Pool
+  {
+    id: "pool",
+    src: "https://zlrqwqei9vlejcwl.public.blob.vercel-storage.com/pool%203.jpg",
+    title: "Poolside View",
+  },
+  {
+    id: "pool_rain",
+    src: "https://zlrqwqei9vlejcwl.public.blob.vercel-storage.com/Rain%20Dance.jpg",
+    title: "Rain Dance Area",
+  },
+
+  // Deluxe Rooms
+  {
+    id: "room_deluxe",
+    src: "https://zlrqwqei9vlejcwl.public.blob.vercel-storage.com/IMG-20240919-WA0004.jpg",
+    title: "Deluxe Room",
+  },
+  {
+    id: "room_deluxe_2",
+    src: "https://zlrqwqei9vlejcwl.public.blob.vercel-storage.com/IMG-20241006-WA0009.jpg",
+    title: "Deluxe Room Interior",
+  },
+  {
+    id: "room_deluxe_3",
+    src: "https://zlrqwqei9vlejcwl.public.blob.vercel-storage.com/IMG-20241006-WA0006.jpg",
+    title: "Deluxe Room View",
+  },
+
+  // Executive Rooms
   {
     id: "room_executive",
-    src: "https://7b2h66h2k89z24v9.public.blob.vercel-storage.com/gallery_executive-A1z1X1y1C1B1A1.jpg",
+    src: "https://zlrqwqei9vlejcwl.public.blob.vercel-storage.com/WhatsApp%20Image%202024-08-07%20at%2012.57.23_68e9ef35.jpg",
     title: "Executive Room",
   },
   {
+    id: "room_executive_2",
+    src: "https://zlrqwqei9vlejcwl.public.blob.vercel-storage.com/DSC00166.JPG",
+    title: "Executive Room View",
+  },
+  {
+    id: "room_executive_3",
+    src: "https://zlrqwqei9vlejcwl.public.blob.vercel-storage.com/DSC00121.JPG",
+    title: "Executive Room Balcony",
+  },
+
+  // Junior Suite
+  {
+    id: "room_suite",
+    src: "https://zlrqwqei9vlejcwl.public.blob.vercel-storage.com/DSC00167.JPG",
+    title: "Junior Suite",
+  },
+  {
+    id: "room_suite_2",
+    src: "https://zlrqwqei9vlejcwl.public.blob.vercel-storage.com/DSC00149.JPG",
+    title: "Junior Suite Seating",
+  },
+  {
+    id: "room_suite_3",
+    src: "https://zlrqwqei9vlejcwl.public.blob.vercel-storage.com/DSC09996.JPG",
+    title: "Junior Suite Interior",
+  },
+
+  // Twin Bed
+  {
+    id: "room_twin",
+    src: "https://zlrqwqei9vlejcwl.public.blob.vercel-storage.com/DSC09913.JPG",
+    title: "Junior Twin Bed",
+  },
+  {
+    id: "room_twin_2",
+    src: "https://zlrqwqei9vlejcwl.public.blob.vercel-storage.com/DSC09920.JPG",
+    title: "Twin Bed Room",
+  },
+
+  // Royal Suite
+  {
+    id: "room_royal",
+    src: "https://zlrqwqei9vlejcwl.public.blob.vercel-storage.com/DSC09875.JPG",
+    title: "Royal Suite",
+  },
+  {
+    id: "room_royal_2",
+    src: "https://zlrqwqei9vlejcwl.public.blob.vercel-storage.com/queen%20executive.JPG",
+    title: "Royal Suite Executive",
+  },
+
+  // Family Suite
+  {
+    id: "room_family",
+    src: "https://zlrqwqei9vlejcwl.public.blob.vercel-storage.com/DSC09887.JPG",
+    title: "Family Suite",
+  },
+  {
+    id: "room_family_2",
+    src: "https://zlrqwqei9vlejcwl.public.blob.vercel-storage.com/DSC09897.JPG",
+    title: "Family Suite Interior",
+  },
+
+  // Banquet & Events
+  {
+    id: "event",
+    src: "https://zlrqwqei9vlejcwl.public.blob.vercel-storage.com/AB_03321.JPG",
+    title: "Banquet Hall",
+  },
+  {
+    id: "event_2",
+    src: "https://zlrqwqei9vlejcwl.public.blob.vercel-storage.com/banquet%20hall%20.jpg",
+    title: "Banquet Hall Setup",
+  },
+  {
+    id: "event_3",
+    src: "https://zlrqwqei9vlejcwl.public.blob.vercel-storage.com/AB_03318.JPG",
+    title: "Event Setup",
+  },
+
+  // Wedding & Garden
+  {
+    id: "wedding",
+    src: "https://zlrqwqei9vlejcwl.public.blob.vercel-storage.com/WhatsApp%20Image%202024-08-30%20at%2012.22.41_0ddabada.jpg",
+    title: "Wedding Venue",
+  },
+  {
+    id: "wedding_2",
+    src: "https://zlrqwqei9vlejcwl.public.blob.vercel-storage.com/WhatsApp%20Image%202024-11-25%20at%2019.15.34_ac25a5ed.jpg",
+    title: "Wedding Decor",
+  },
+  {
     id: "garden",
-    src: "https://7b2h66h2k89z24v9.public.blob.vercel-storage.com/gallery_garden-z1X1y1C1B1A1z.jpg",
-    title: "Lush Gardens",
+    src: "https://zlrqwqei9vlejcwl.public.blob.vercel-storage.com/WhatsApp%20Image%202024-08-30%20at%2012.22.57_b86271a7.jpg",
+    title: "Garden Gazebo",
   },
   {
-    id: "local_sight",
-    src: "https://7b2h66h2k89z24v9.public.blob.vercel-storage.com/gallery_local_sight-X1y1C1B1A1z1.jpg",
-    title: "Nearby Cenotaphs",
+    id: "garden_2",
+    src: "https://zlrqwqei9vlejcwl.public.blob.vercel-storage.com/WhatsApp%20Image%202024-08-19%20at%2014.03.47_757bbee4.jpg",
+    title: "Garden Area",
   },
   {
-    id: "food",
-    src: "https://7b2h66h2k89z24v9.public.blob.vercel-storage.com/gallery_food-y1C1B1A1z1X1.jpg",
-    title: "Gourmet Cuisine",
+    id: "garden_3",
+    src: "https://zlrqwqei9vlejcwl.public.blob.vercel-storage.com/Gazibo%20.jpg",
+    title: "Gazebo View",
   },
 ];
 

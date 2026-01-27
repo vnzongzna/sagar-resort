@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { X } from "lucide-react";
 import { GALLERY_IMAGES } from "../config";
 
-const CATEGORIES = ["All", "Resort", "Rooms", "Dining", "Events"];
+const CATEGORIES = ["All", "Resort", "Rooms", "Events"];
 
 const ImageWithFallback = ({ src, alt, className, onClick }) => {
   return (
@@ -56,11 +56,9 @@ const GalleryPage = () => {
               )
             : activeCategory === "Rooms"
               ? img.id.startsWith("room")
-              : activeCategory === "Dining"
-                ? ["dining", "food"].includes(img.id)
-                : activeCategory === "Events"
-                  ? ["wedding", "event"].includes(img.id)
-                  : false,
+              : activeCategory === "Events"
+                ? ["wedding", "event"].includes(img.id.split("_")[0])
+                : false,
         );
 
   return (

@@ -117,7 +117,7 @@ const BanquetPage = ({ setActiveTab }) => {
                 <div className="flex items-center space-x-6 text-sm text-stone-500 mb-6">
                   <div className="flex items-center">
                     <Users size={18} className="mr-2 text-amber-600" /> Up to
-                    500 Guests
+                    200 Guests
                   </div>
                   <div className="flex items-center">
                     <Maximize2 size={18} className="mr-2 text-amber-600" /> 4500
@@ -144,7 +144,7 @@ const BanquetPage = ({ setActiveTab }) => {
                 <div className="flex items-center space-x-6 text-sm text-stone-500 mb-6">
                   <div className="flex items-center">
                     <Users size={18} className="mr-2 text-amber-600" /> Up to
-                    200 Guests
+                    100 Guests
                   </div>
                   <div className="flex items-center">
                     <Maximize2 size={18} className="mr-2 text-amber-600" /> 3000

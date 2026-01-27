@@ -307,7 +307,7 @@ export default function App() {
             onClick={() => setActiveTab("home")}
           >
             <img
-              src="/logo/sagar.png"
+              src="/logo/sagar_symbol.png"
               alt="Sagar Resort Logo"
               className="h-16 w-auto object-contain"
             />
@@ -376,7 +376,7 @@ export default function App() {
 
   const renderHome = () => (
     <div className="animate-in fade-in duration-700">
-      <div className="relative h-[85vh] flex items-center justify-center">
+      <div className="relative h-screen flex items-center justify-center">
         <div className="absolute inset-0">
           <ImageWithFallback
             src={IMAGES.hero}
@@ -502,7 +502,7 @@ export default function App() {
                 {[
                   "Lush green gardens perfect for weddings",
                   "View of the Aravali mountains",
-                  "70+ tastefully furnished rooms",
+                  "60+ tastefully furnished rooms",
                   "24/7 Room Service & Concierge",
                 ].map((item, i) => (
                   <li key={i} className="flex items-center text-stone-700">

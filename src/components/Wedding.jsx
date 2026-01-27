@@ -1,5 +1,5 @@
-import React from "react";
-import { Heart, Sun, CheckCircle } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { Heart, Sun, CheckCircle, ChevronLeft, ChevronRight } from "lucide-react";
 import { IMAGES } from "../config";
 
 const ImageWithFallback = ({ src, alt, className }) => {
@@ -23,10 +23,79 @@ const Button = ({ children, onClick, variant = "primary", className = "" }) => {
   );
 };
 
+const WeddingCarousel = ({ images }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, [images.length]);
+
+  const goToPrevious = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
+
+  const goToNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
+  return (
+    <div className="relative h-[550px] overflow-hidden rounded-lg shadow-2xl group">
+      {images.map((img, index) => (
+        <img
+          key={index}
+          src={img}
+          alt={`Wedding ${index + 1}`}
+          className={`absolute w-full h-full object-cover transition-opacity duration-500 ${
+            index === currentIndex ? "opacity-100" : "opacity-0"
+          }`}
+        />
+      ))}
+
+      <button
+        onClick={goToPrevious}
+        className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+      >
+        <ChevronLeft className="w-6 h-6" />
+      </button>
+
+      <button
+        onClick={goToNext}
+        className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+      >
+        <ChevronRight className="w-6 h-6" />
+      </button>
+
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+        {images.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentIndex(index)}
+            className={`w-2 h-2 rounded-full transition-all ${
+              index === currentIndex ? "bg-white w-8" : "bg-white/50"
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const WeddingPage = ({ setActiveTab }) => {
+  const weddingImages = [
+    IMAGES.wedding_couple,
+    IMAGES.wedding_venue,
+    IMAGES.wedding_decor,
+    IMAGES.wedding_hero,
+  ];
+
   return (
     <div className="min-h-screen animate-in fade-in duration-500">
-      <div className="relative h-[70vh] overflow-hidden">
+      <div className="relative h-screen overflow-hidden">
         <video
           autoPlay
           loop
@@ -34,7 +103,7 @@ const WeddingPage = ({ setActiveTab }) => {
           playsInline
           className="w-full h-full object-cover"
         >
-          <source src="/videos/Trimmed Banner.mp4" type="video/mp4" />
+          <source src="/videos/Banner.mp4" type="video/mp4" />
           {/* Fallback image if video fails to load */}
           <img
             src={IMAGES.wedding_hero}
@@ -42,9 +111,8 @@ const WeddingPage = ({ setActiveTab }) => {
             alt="Beautiful Wedding Setup"
           />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 p-12 text-white text-center">
-          <Heart className="w-16 h-16 text-rose-300 mx-auto mb-4" />
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 flex flex-col items-center justify-center p-12 text-white text-center">
           <h2 className="text-5xl md:text-6xl font-serif font-bold mb-4 drop-shadow-lg">
             Dream Weddings in Alwar
           </h2>
@@ -89,13 +157,7 @@ const WeddingPage = ({ setActiveTab }) => {
                 Start Planning
               </Button>
             </div>
-            <div className="relative h-[550px]">
-              <ImageWithFallback
-                src={IMAGES.wedding_couple}
-                alt="Happy Couple"
-                className="rounded-lg shadow-2xl w-full h-full object-cover"
-              />
-            </div>
+            <WeddingCarousel images={weddingImages} />
           </div>
         </div>
       </div>
@@ -161,7 +223,7 @@ const WeddingPage = ({ setActiveTab }) => {
             </h3>
             <p className="text-stone-600 text-lg leading-relaxed mb-8">
               Host an immersive destination wedding by booking our entire
-              resort. With over 70 rooms, we can comfortably accommodate your
+              resort. With over 60 rooms, we can comfortably accommodate your
               guests, turning your wedding into a mini-vacation for everyone.
             </p>
             <Button onClick={() => setActiveTab("book")}>
