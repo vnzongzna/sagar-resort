@@ -226,7 +226,7 @@ const WeddingPage = ({ setActiveTab }) => {
               resort. With over 60 rooms, we can comfortably accommodate your
               guests, turning your wedding into a mini-vacation for everyone.
             </p>
-            <Button onClick={() => setActiveTab("book")}>
+            <Button onClick={() => setActiveTab("contact")}>
               Book a Consultation
             </Button>
           </div>

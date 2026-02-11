@@ -206,19 +206,10 @@ const RoomModal = ({ room, onClose, onBook }) => {
             </div>
           </div>
 
-          <div className="mt-auto pt-6 border-t border-stone-100 flex items-center justify-between">
-            <div>
-              <span className="block text-sm text-stone-400">
-                Price per night
-              </span>
-              <div className="flex items-baseline">
-                <span className="text-3xl font-bold text-amber-700">
-                  ₹{room.price}
-                </span>
-                <span className="text-stone-500 ml-1 text-sm">+ taxes</span>
-              </div>
-            </div>
-            {/* <Button onClick={() => onBook(room.id)}>Book This Room</Button> */}
+          <div className="mt-auto pt-6 border-t border-stone-100">
+            <p className="text-stone-600 text-sm">
+              Contact us for pricing and availability
+            </p>
           </div>
         </div>
       </div>
@@ -586,23 +577,15 @@ export default function App() {
                     + View all amenities
                   </div>
                 </div>
-                <div className="pt-6 border-t border-stone-100 flex items-center justify-between">
-                  <div>
-                    <span className="text-xs text-stone-400 uppercase tracking-wide block">
-                      Starting form
-                    </span>
-                    <span className="text-2xl font-bold text-amber-700">
-                      ₹{room.price}
-                    </span>
-                  </div>
+                <div className="pt-6 border-t border-stone-100">
                   <Button
                     onClick={() => {
                       setActiveTab("contact");
                       window.scrollTo(0, 0);
                     }}
-                    className="text-sm px-4 py-2"
+                    className="text-sm px-4 py-2 w-full"
                   >
-                    Contact Us
+                    Contact for Pricing
                   </Button>
                 </div>
               </div>
