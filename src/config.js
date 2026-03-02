@@ -90,10 +90,9 @@ export const ROOMS = [
       "https://zlrqwqei9vlejcwl.public.blob.vercel-storage.com/DSC00037.JPG",
     ],
     description:
-      "Enjoy the comfort of a king-sized bed with a view of the Aravalli Hills and Sariska Tiger Reserve buffer zone. Features a private balcony to kick back and soak in the Rajasthani vibe.",
+      "Enjoy the comfort of a king-sized bed with a view of the Aravalli Hills and Sariska Tiger Reserve buffer zone. Features a view of Aravalli to kick back and soak in the Rajasthani vibe.",
     amenities: [
       "Mountain View",
-      "Private Balcony",
       "Mini Fridge",
       "Premium Toiletries",
       "LED TV",
@@ -121,7 +120,6 @@ export const ROOMS = [
     amenities: [
       "Sitting Area",
       "Luxury Bath",
-      "Welcome Drink",
       "Room Service",
       "WiFi",
     ],
@@ -171,7 +169,7 @@ export const ROOMS = [
     description:
       "Indulge in elegance with Satellite TV, large writing desks, and well-appointed bathrooms. These newly refurbished rooms offer a multi-media hub and wired internet.",
     amenities: [
-      "Bathtub",
+      "Luxury Bath",
       "Large Work Desk",
       "Multi-media Hub",
       "Satellite TV",
@@ -234,21 +232,21 @@ export const GALLERY_IMAGES = [
     title: "Rain Dance Area",
   },
 
-  // Deluxe Rooms
+  // Royal Suite - Additional
   {
-    id: "room_deluxe",
-    src: "https://zlrqwqei9vlejcwl.public.blob.vercel-storage.com/IMG-20240919-WA0004.jpg",
-    title: "Deluxe Room",
+    id: "room_royal_3",
+    src: "https://zlrqwqei9vlejcwl.public.blob.vercel-storage.com/DSC09881.JPG",
+    title: "Royal Suite Bedroom",
   },
   {
-    id: "room_deluxe_2",
-    src: "https://zlrqwqei9vlejcwl.public.blob.vercel-storage.com/IMG-20241006-WA0009.jpg",
-    title: "Deluxe Room Interior",
+    id: "room_royal_4",
+    src: "https://zlrqwqei9vlejcwl.public.blob.vercel-storage.com/DSC09866.JPG",
+    title: "Royal Suite Interior",
   },
   {
-    id: "room_deluxe_3",
-    src: "https://zlrqwqei9vlejcwl.public.blob.vercel-storage.com/IMG-20241006-WA0006.jpg",
-    title: "Deluxe Room View",
+    id: "room_royal_5",
+    src: "https://zlrqwqei9vlejcwl.public.blob.vercel-storage.com/DSC09878.JPG",
+    title: "Royal Suite Living Area",
   },
 
   // Executive Rooms
